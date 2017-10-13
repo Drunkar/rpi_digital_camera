@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 # coding: utf-8
 """
 - After boot, be ready to use.

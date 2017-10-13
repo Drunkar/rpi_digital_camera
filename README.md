@@ -8,15 +8,17 @@
 
 
 ## 仕様
-- データの保存場所
-- データの保存名
-- USBデバイスがない場合
-- USBデバイスが複数ある場合
+- !データの保存場所
+- !データの保存名
+- !USBデバイスがない場合
+- !USBデバイスが複数ある場合
 
 
 ## Initial setup (for developper)
 
-> After raspbian install.
+### Environment settings
+
+> !After raspbian install.
 
 ```
 # enable sshd
@@ -37,6 +39,12 @@ sudo apt-get -y upgrade
 sudo rpi-update
 sudo apt-get install python-picamera
 sudo apt-get install ntfs-3g
+```
 
-# ボタンのロジック
+### Register as a service
+
+```
+sudo cp rpicam.service /etc/systemd/system/rpicam.service
+sudo chmod +x rpi_digital_camera.py
+sudo reboot
 ```
