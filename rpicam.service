@@ -3,6 +3,7 @@ Description=rpicam
 After=syslog.target
 
 [Service]
+Restart=always
 Type=simple
 WorkingDirectory=/home/pi/rpi_digital_camera
 ExecStart=/home/pi/rpi_digital_camera/rpi_digital_camera.py
@@ -10,4 +11,4 @@ TimeoutStopSec=5
 StandardOutput=null
 
 [Install]
-WantedBy = graphical.target
+WantedBy=multi-user.target

@@ -45,6 +45,7 @@ sudo apt-get install ntfs-3g
 
 ```
 sudo cp rpicam.service /etc/systemd/system/rpicam.service
+sudo systemctl enable rpicam
 sudo chmod +x rpi_digital_camera.py
 sudo reboot
 ```
