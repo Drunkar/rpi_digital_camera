@@ -33,8 +33,12 @@ GPIO.output(STATUS_PIN, 0)
 
 
 def save_img_to_storage(tmp_file, cap_time):
-    media = os.listdir(MEDIA_DIR)
-    logger.debug(media)
+    try:
+        media = os.listdir(MEDIA_DIR)
+        logger.debug(media)
+    except Exception as e:
+        logger.error(e)
+        media = []
 
     # when storage is mounted, save image.
     if len(media) == 0:

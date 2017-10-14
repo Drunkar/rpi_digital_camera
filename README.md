@@ -44,6 +44,9 @@ sudo apt-get install ntfs-3g
 ### Register as a service
 
 ```
+sudo apt-get install git
+git clone https://github.com/Drunkar/rpi_digital_camera.git
+cd rpi_digital_camera
 sudo cp rpicam.service /etc/systemd/system/rpicam.service
 sudo systemctl enable rpicam
 sudo chmod +x rpi_digital_camera.py
