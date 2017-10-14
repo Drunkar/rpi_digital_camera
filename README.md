@@ -7,6 +7,9 @@
 - Save the image to a usb storage.
 
 ## 利用の流れ
+
+https://youtu.be/wwVnYQvGDr4
+
 1. 電源入れる
 2. 準備ができたらLEDが点灯するので、USBメモリを入れる
 3. LEDがついてるときにボタンを押すと撮影。
