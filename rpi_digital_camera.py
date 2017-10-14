@@ -126,7 +126,7 @@ if __name__ == '__main__':
     try:
         while True:
             main()
-            time.sleep(3)
+            time.sleep(1)
     except Exception as e:
         logger.error(e)
     finally:
