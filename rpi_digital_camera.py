@@ -32,6 +32,14 @@ GPIO.setup(STATUS_PIN, GPIO.OUT)
 GPIO.output(STATUS_PIN, 0)
 
 
+def blinking(pin):
+    for i in range(6):
+        GPIO.output(pin, 1)
+        time.sleep(0.1)
+        GPIO.output(pin, 0)
+        time.sleep(0.1)
+
+
 def save_img_to_storage(tmp_file, cap_time):
     try:
         media = os.listdir(MEDIA_DIR)
@@ -42,6 +50,7 @@ def save_img_to_storage(tmp_file, cap_time):
 
     # when storage is mounted, save image.
     if len(media) == 0:
+        blinking(STATUS_PIN)
         raise Exception("No storage devices!")
 
     media_root = os.path.join(MEDIA_DIR, media[0])
@@ -90,7 +99,6 @@ def main():
             logger.error(e)
         finally:
             camera.close()
-            GPIO.cleanup()
 
 
 if __name__ == '__main__':
@@ -118,6 +126,8 @@ if __name__ == '__main__':
     try:
         while True:
             main()
-            time.sleep(5)
+            time.sleep(3)
     except Exception as e:
         logger.error(e)
+    finally:
+        GPIO.cleanup()
